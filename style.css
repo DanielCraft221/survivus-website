@@ -7,6 +7,9 @@
   --color-surface: #2d2d2d;
   --color-surface-hover: #3c3c3c;
   --color-focus-ring: #8fd67a;
+  --color-bg-green: #234d1f;
+  --color-bg-blue: #123a63;
+  --bg-tile-size: 48px;
 
   --font-base:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
@@ -65,10 +68,31 @@ body {
   background-color: var(--color-bg-fallback);
   background-image:
     linear-gradient(var(--color-overlay), var(--color-overlay)),
-    url("./assets/images/background.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.06) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(255, 255, 255, 0.06) 75%
+    ),
+    linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.06) 25%,
+      transparent 25%,
+      transparent 75%,
+      rgba(255, 255, 255, 0.06) 75%
+    ),
+    linear-gradient(to right, var(--color-bg-green), var(--color-bg-blue));
+  background-size:
+    100% 100%,
+    var(--bg-tile-size) var(--bg-tile-size),
+    var(--bg-tile-size) var(--bg-tile-size),
+    100% 100%;
+  background-position:
+    0 0,
+    0 0,
+    calc(var(--bg-tile-size) / 2) calc(var(--bg-tile-size) / 2),
+    0 0;
 }
 
 .page__header {
