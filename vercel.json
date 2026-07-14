@@ -1,0 +1,29 @@
+{
+  "redirects": [
+    {
+      "source": "/discord",
+      "destination": "https://discord.gg/aa4RtDt4ra",
+      "permanent": false
+    },
+    {
+      "source": "/loja",
+      "destination": "https://survivus.pixelcart.com.br",
+      "permanent": false
+    },
+    {
+      "source": "/tiktok",
+      "destination": "https://www.tiktok.com/@survivusmc",
+      "permanent": false
+    },
+    {
+      "source": "/youtube",
+      "destination": "https://www.youtube.com/@survivus",
+      "permanent": false
+    },
+    {
+      "source": "/instagram",
+      "destination": "https://www.instagram.com/survivus",
+      "permanent": false
+    }
+  ]
+}
