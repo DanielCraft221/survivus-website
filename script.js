@@ -1,51 +1,59 @@
 (() => {
   "use strict";
 
-  const container = document.querySelector(".social-container");
-  if (!container) return;
+  const copyButton = document.querySelector("[data-copy]");
+  const copyStatus = document.querySelector("#copy-status");
+  const year = document.querySelector("#year");
 
-  let botaoAberto = null;
-
-  function colapsar(botao) {
-    botao.classList.remove("expandido");
-    botao.setAttribute("aria-expanded", "false");
+  if (year) {
+    year.textContent = String(new Date().getFullYear());
   }
 
-  function expandir(botao) {
-    botao.classList.add("expandido");
-    botao.setAttribute("aria-expanded", "true");
-  }
+  if (!copyButton || !copyStatus) return;
 
-  function fecharBotaoAberto() {
-    if (botaoAberto) {
-      colapsar(botaoAberto);
-      botaoAberto = null;
+  const setStatus = (message, isError = false) => {
+    copyStatus.textContent = message;
+    copyStatus.classList.toggle("is-error", isError);
+  };
+
+  const copyText = async (text) => {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(text);
+      return;
     }
-  }
 
-  container.addEventListener("click", (event) => {
-    const botao = event.target.closest(".social-btn");
-    if (!botao) return;
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.opacity = "0";
+    document.body.append(textarea);
+    textarea.select();
+    const copied = document.execCommand("copy");
+    textarea.remove();
 
-    if (botao === botaoAberto) return;
+    if (!copied) throw new Error("Copy command was not successful.");
+  };
 
-    event.preventDefault();
+  copyButton.addEventListener("click", async () => {
+    const address = copyButton.dataset.copy;
+    if (!address) return;
 
-    if (botaoAberto) colapsar(botaoAberto);
+    try {
+      await copyText(address);
+      copyButton.classList.add("is-copied");
+      copyButton.setAttribute("aria-label", "Endereço de e-mail copiado");
+      setStatus("Endereço de e-mail copiado.");
 
-    expandir(botao);
-    botaoAberto = botao;
-  });
-
-  document.addEventListener("click", (event) => {
-    if (!event.target.closest(".social-btn")) {
-      fecharBotaoAberto();
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      fecharBotaoAberto();
+      window.setTimeout(() => {
+        copyButton.classList.remove("is-copied");
+        copyButton.setAttribute("aria-label", "Copiar endereço de e-mail");
+      }, 2200);
+    } catch {
+      setStatus(
+        "Não foi possível copiar o endereço. Selecione-o e copie manualmente.",
+        true,
+      );
     }
   });
 })();
