@@ -81,7 +81,7 @@
       } catch {
         showStatus(
           status,
-          "Não foi possível copiar o endereço. Selecione-o e copie manualmente.",
+          "Não foi possível copiar. Selecione o valor e copie manualmente.",
           true,
         );
       }
