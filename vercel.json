@@ -36,22 +36,22 @@
     {
       "source": "/loja",
       "destination": "https://survivus.pixelcart.com.br",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/tiktok",
       "destination": "https://www.tiktok.com/@survivusmc",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/youtube",
       "destination": "https://www.youtube.com/@survivus",
-      "permanent": false
+      "permanent": true
     },
     {
       "source": "/instagram",
       "destination": "https://www.instagram.com/survivus",
-      "permanent": false
+      "permanent": true
     }
   ]
 }
