@@ -1,4 +1,19 @@
-User-agent: *
+User-agent: Googlebot
 Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: *
+Disallow: /
 
 Sitemap: https://survivus.com.br/sitemap.xml
