@@ -50,7 +50,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://survivus.com.br/assets/images/survivus-logo.png"
+      content="https://survivus.com.br/assets/images/survivus-logo-1024x1024.png"
     />
 
     <link rel="icon" href="./assets/images/favicon.ico" sizes="any" />
@@ -72,12 +72,6 @@
 
     <link rel="stylesheet" href="style.css" />
 
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3125964716709244"
-      crossorigin="anonymous"
-    ></script>
-
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -86,21 +80,6 @@
         "url": "https://survivus.com.br/",
         "logo": "https://survivus.com.br/assets/images/survivus-logo-1024x1024.png"
       }
-    </script>
-
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-3N6VMBN715"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-3N6VMBN715");
     </script>
   </head>
 
@@ -119,8 +98,8 @@
                   type="image/webp"
                 />
                 <img
-                  src="./assets/images/survivus-logo.png"
-                  alt="Logo da Survivus"
+                  src="./assets/images/survivus-logo-1024x1024.png"
+                  alt=""
                   width="384"
                   height="384"
                   fetchpriority="high"
@@ -129,8 +108,8 @@
               </picture>
             </div>
             <p class="intro__lede">
-              Acesse nossa comunidade no Discord, o webmail ou fale conosco por um dos
-              canais abaixo.
+              Acesse nossa comunidade no Discord, o webmail ou fale conosco por
+              um dos canais abaixo.
             </p>
           </div>
 
@@ -240,7 +219,7 @@
               href="/discord"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Abrir a comunidade Survivus no Discord"
+              aria-label="Abrir a comunidade Survivus no Discord em uma nova aba"
             >
               <span class="service__icon">
                 <img
@@ -357,19 +336,31 @@
     <footer class="site-footer">
       <div class="container site-footer__inner">
         <span class="site-footer__mark">SURVIVUS</span>
-        <p>© <span id="year"></span> Survivus. Todos os Direitos Reservados.</p>
+        <p>
+          © <span id="year">2026</span> Survivus. Todos os Direitos Reservados.
+        </p>
+        <a class="site-footer__privacy" href="privacidade.html">Privacidade</a>
       </div>
     </footer>
 
-    <script src="script.js" defer></script>
+    <aside
+      class="cookie-consent"
+      id="cookie-consent"
+      aria-label="Aviso sobre cookies"
+      data-adsense-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3125964716709244"
+      data-analytics-src="https://www.googletagmanager.com/gtag/js?id=G-3N6VMBN715"
+      data-analytics-id="G-3N6VMBN715"
+      data-speed-insights-src="/_vercel/speed-insights/script.js"
+    >
+      <p>
+        Usamos cookies próprios e de terceiros para tornar sua experiência
+        melhor.
+        <a href="privacidade.html">Saiba mais</a>.
+      </p>
+      <button type="button" data-cookie-consent-accept>Aceitar</button>
+    </aside>
 
-    <script>
-      window.si =
-        window.si ||
-        function () {
-          (window.siq = window.siq || []).push(arguments);
-        };
-    </script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
+    <script type="module" src="consent.mjs"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
