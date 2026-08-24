@@ -1,0 +1,4 @@
+Contact: mailto:contato@survivus.com.br
+Expires: 2027-08-22T00:00:00Z
+Preferred-Languages: pt-BR
+Canonical: https://survivus.com.br/.well-known/security.txt
